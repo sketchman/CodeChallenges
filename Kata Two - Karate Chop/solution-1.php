@@ -4,6 +4,9 @@
  * This solution solves the problem using dynamic programming.
  * We used recursion to approach this problem, halving our array
  * until we are down to two or fewer elements.
+ * 
+ * Note: This solution assumes the array is presorted
+ * 
  */
 function chopit ($searchInt, $arr) {
 	
