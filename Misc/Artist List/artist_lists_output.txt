@@ -1,0 +1,101 @@
+30 Seconds to Mars, Muse
+Arctic Monkeys, Coldplay
+Arctic Monkeys, Franz Ferdinand
+Arctic Monkeys, Kings of Leon
+Arctic Monkeys, MGMT
+Arctic Monkeys, Muse
+Arctic Monkeys, Nirvana
+Arctic Monkeys, Oasis
+Arctic Monkeys, Placebo
+Arctic Monkeys, Radiohead
+Arctic Monkeys, The Beatles
+Arctic Monkeys, The Killers
+Arctic Monkeys, The Kooks
+Arctic Monkeys, The Strokes
+Britney Spears, Lady Gaga
+Coldplay, Kings of Leon
+Coldplay, Lady Gaga
+Coldplay, Muse
+Coldplay, Nirvana
+Coldplay, Oasis
+Coldplay, Placebo
+Coldplay, Radiohead
+Coldplay, Red Hot Chili Peppers
+Coldplay, The Beatles
+Coldplay, The Killers
+David Bowie, Radiohead
+David Bowie, The Beatles
+Death Cab for Cutie, Muse
+Death Cab for Cutie, Radiohead
+Death Cab for Cutie, The Beatles
+Foo Fighters, Muse
+Foo Fighters, Nirvana
+Foo Fighters, Radiohead
+Foo Fighters, Red Hot Chili Peppers
+Franz Ferdinand, Muse
+Franz Ferdinand, Radiohead
+Franz Ferdinand, The Beatles
+Green Day, Muse
+Incubus, Muse
+Iron Maiden, Metallica
+Kasabian, Muse
+Ke$ha, Lady Gaga
+Kings of Leon, Muse
+Kings of Leon, Radiohead
+Kings of Leon, The Killers
+Lady Gaga, Lily Allen
+Lady Gaga, Muse
+Lady Gaga, Paramore
+Lady Gaga, Rihanna
+Lady Gaga, The Beatles
+Led Zeppelin, Pink Floyd
+Led Zeppelin, The Beatles
+Linkin Park, Muse
+Metallica, Muse
+Metallica, System of a Down
+MGMT, Muse
+MGMT, The Beatles
+Muse, Nirvana
+Muse, Oasis
+Muse, Paramore
+Muse, Pink Floyd
+Muse, Placebo
+Muse, Queen
+Muse, Radiohead
+Muse, Red Hot Chili Peppers
+Muse, Snow Patrol
+Muse, System of a Down
+Muse, The Beatles
+Muse, The Cure
+Muse, The Killers
+Muse, The Kooks
+Muse, The Strokes
+Nirvana, Oasis
+Nirvana, Pearl Jam
+Nirvana, Placebo
+Nirvana, Radiohead
+Nirvana, Red Hot Chili Peppers
+Nirvana, The Beatles
+Oasis, Radiohead
+Oasis, The Beatles
+Oasis, The Killers
+Pearl Jam, Radiohead
+Pink Floyd, Radiohead
+Pink Floyd, The Beatles
+Placebo, Radiohead
+Placebo, The Killers
+Queen, The Beatles
+Radiohead, Red Hot Chili Peppers
+Radiohead, The Beatles
+Radiohead, The Cure
+Radiohead, The Killers
+Radiohead, The Smiths
+Radiohead, The Strokes
+Red Hot Chili Peppers, The Beatles
+Red Hot Chili Peppers, The Killers
+The Beatles, The Killers
+The Beatles, The Rolling Stones
+The Beatles, The Smiths
+The Beatles, The Strokes
+The Cure, The Smiths
+The Killers, The Strokes
