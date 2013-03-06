@@ -15,4 +15,4 @@ Play with using different numbers of hashes, and with different bitmap sizes.
 
 Part two of the exercise is optional. Try generating random 5-character words and feeding them in to your spell checker. For each word that it says it OK, look it up in the original dictionary. See how many false positives you get.
 
-Additional Resources on Blood Filters: http://www.perl.com/pub/2004/04/08/bloom_filters.html
+Additional Resources on Bloom Filters: http://www.perl.com/pub/2004/04/08/bloom_filters.html
