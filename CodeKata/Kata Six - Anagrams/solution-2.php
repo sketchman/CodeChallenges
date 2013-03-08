@@ -58,10 +58,10 @@ Class AnagramsViaSort {
 		
 		//set to lowercase
 		$word = strtolower($word);
-		$word_val = $this->calcWordVal($word);
+		$word_sort = $this->sortWord($word);
 		
-		if (isset($this->dict_val[$word_val])) {
-			return $this->dict_val[$word_val];
+		if (isset($this->dict_val[$word_sort])) {
+			return $this->dict_val[$word_sort];
 		} else {
 			return 'No Anagrams';
 		}
