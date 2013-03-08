@@ -8,23 +8,24 @@
  * output contains all the words from the input that are anagrams 
  * of each other. 
  * 
- * This method uses Prime numbers to get unique multipliers
- * rather than a brute force technique of sorting each word
- * and comparing.
+ * This method uses a method of going through each
+ * word, sorting the letters, then going through the
+ * entire dictionary comparing and finding duplicates
+ * like in solution-1
+ * 
+ * The main difference in this version is instead of calculating
+ * a numeric value for the word, we simply get a sorted version of
+ * it and compare.
+ * 
+ * This solution is more efficient, since less calculations need
+ * to be done on an individual word.
  */
 
-Class AnagramsViaPrimes {
+Class AnagramsViaSort {
 
 	private $dict;
 	private $dict_val;
 	private $ana_list;
-	private $char_map = array(
-		"e" => 2, "t" => 3, "a" => 5, "o" => 7, "i" => 11,
-		"n" => 13, "s" => 17, "h" => 19, "r" => 23, "d" => 29,
-		"l" => 31, "c" => 37, "u" => 41, "m" => 43, "w" => 47,
-		"f" => 53, "g" => 59, "y" => 61, "p" => 67, "b" => 71,
-		"v" => 73, "k" => 79, "j" => 83, "x" => 89, "q" => 97,
-		"z" => 101);
 	
 	public function __construct($filename = NULL) {
 		
@@ -118,16 +119,16 @@ Class AnagramsViaPrimes {
 				continue;
 			}
 			
-			$word_val = $this->calcWordVal(strtolower($i));
+			$word_sort = $this->sortWord(strtolower($i));
 
 			//if this word is an anagram
-			if (isset($this->dict_val[$word_val])) {
+			if (isset($this->dict_val[$word_sort])) {
 				//add the word to our key chain
-				$this->dict_val[$word_val][] = $i;
-				$this->ana_list[$word_val] = true;	//add to our anagram list
+				$this->dict_val[$word_sort][] = $i;
+				$this->ana_list[$word_sort] = true;	//add to our anagram list
 			} else {
 				//add new word val
-				$this->dict_val[$word_val] = array($i);
+				$this->dict_val[$word_sort] = array($i);
 			}
 			
 			//store the word for duplicate check
@@ -137,23 +138,16 @@ Class AnagramsViaPrimes {
 	}
 	
 	/*
-	 * Calculates the anagram value of a word
+	 * Takes a word and sorts each letter
+	 * alphabetically
 	 */
-	private function calcWordVal($word) {
+	private function sortWord($word) {
 		
-		//set to lowercase
-		$word = strtolower($word);
-		$word_val = 1;
+		//sort the string by chars
+		$str_chars = str_split($word);
+		sort($str_chars);
 		
-		//loop through $word and get total count
-		for ($i = 0; $i < strlen($word); $i++) {
-			//convert to prime number
-			if (isset($this->char_map[$word[$i]])) {
-				$word_val *= $this->char_map[$word[$i]];
-			}
-		}
-		
-		return strval($word_val);	//make it a string due to memory issues with ints
+		return implode('', $str_chars);
 		
 	}
 	
@@ -166,7 +160,7 @@ Class AnagramsViaPrimes {
 echo '<h2>Test Mode</h2>';
 $string = 'rots';
 
-$a = new AnagramsViaPrimes();
+$a = new AnagramsViaSort();
 $anagrams = $a->findAnagrams($string);
 
 echo "<p>Looking for anagrams for <strong>$string</strong></p>";
@@ -180,8 +174,8 @@ $time_start = microtime(true);	//debug
 echo '<h2>File Mode</h2>';
 $filename = 'wordlist.txt';
 
-$b = new AnagramsViaPrimes($filename);
-$r = $b->writeAnagrams('output.txt');
+$b = new AnagramsViaSort($filename);
+$r = $b->writeAnagrams('output2.txt');
 
 //debug
 $time_end = microtime(true);
