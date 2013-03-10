@@ -17,6 +17,8 @@
  * they match.
  * 
  * This method takes O(n) time, where n is the length of the word being checked.
+ * If the word isn't a palindrome, this function has the potential to run
+ * quicker than O(n), depending on when an unmatched char is found.
  */
 function testPalindrome($word){
 
@@ -46,7 +48,8 @@ function testPalindrome($word){
  * the reversed version.
  * 
  * This method requires allocating more memory for a duplicate of the original 
- * string.
+ * string but overall is quicker when the string is a Palindrome. If the string
+ * is not a Palindrome, then this method still must run it's full course.
  */
 function testPalindromeFlip($word) {
 	
