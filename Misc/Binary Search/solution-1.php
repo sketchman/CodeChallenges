@@ -11,8 +11,8 @@
  */
 
 /*
- * Takes an array and performs a bianry search
- * for the target. Provide the start value for array
+ * Takes an array and performs a recursive binary search
+ * looking for the target.
  */
 function myBinarySearch($arr, $target, $start = NULL, $end = NULL) {
 	
