@@ -26,6 +26,24 @@ function mySqrRoot($num, $prev = 1.0) {
 	
 }
 
+/*
+ * Divide two numbers and returns the
+ * integer value, doesn't do any error
+ * checking!
+ */
+function myDivide($num1, $num2) {
+	
+	$r = 0;
+	
+	while ($num1 >= $num2) {
+		$r++;
+		$num1 -= $num2;
+	}
+	
+	return $r;
+	
+}
+
 
 echo "<h2>Test Square Root</h2>";
 $val = 52;
@@ -49,4 +67,14 @@ echo "<br/>Our mySqrRoot($val): ".  mySqrRoot($val)."</p>";
 $val = -5;
 echo "<p>Native sqrt($val): ".sqrt($val);
 echo "<br/>Our mySqrRoot($val): ".  mySqrRoot($val)."</p>";
+
+
+echo "<h2>Test Division</h2>";
+
+$n = 11.0;
+$d = 2.0;
+$ans = myDivide($n, $d);
+echo "<p>Native $n/$d: ".($n/$d);
+echo "<br/>Our myDivide($n, $d): ".$ans."</p>";
+
 ?>
