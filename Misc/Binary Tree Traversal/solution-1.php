@@ -5,6 +5,10 @@
  * 
  * How the four main types of binary tree traversal.
  * Implement them in recursive and nonrecursive ways.
+ * 
+ * References:
+ *	http://leetcode.com/2010/10/binary-tree-post-order-traversal.html
+ *	http://leetcode.com/2010/04/binary-search-tree-in-order-traversal.html
  */
 
 
@@ -24,10 +28,7 @@ class BinaryTree {
 		$this->_root->insert($val);
 		$this->size++;
 	}
-	
-	public function printTree() {
-		//$this->_root->printNode();
-	}
+
 	
 }
 
@@ -43,20 +44,6 @@ class BinaryTreeNode {
 		$this->_left = NULL;
 		$this->_right = NULL;
 		$this->visited = FALSE;
-	}
-	
-	/*
-	 * Recursively print the node and children
-	 */
-	public function printNode() {
-	
-		//this item
-		//echo "		".$item;
-		
-		///children
-		//echo "	/			\ ";
-		//echo $this-;
-		
 	}
 	
 	
@@ -148,7 +135,27 @@ class BinaryTreeNode {
 	 * Pre-order traversal non-recursive
 	 */
 	public function preOrder() {
-		return NULL;
+		
+		$stack = array();
+		array_push($stack, $this);
+		
+		while (!empty($stack)) {
+		
+			//pop the stack and visit
+			$cur_node = array_pop($stack);
+			$cur_node->visit();
+			
+			//add the right first, will be looked at last
+			if ($cur_node->_right != NULL) {
+				array_push($stack, $cur_node->_right);
+			}
+			//add the left, will be looked at first
+			if ($cur_node->_left != NULL) {
+				array_push($stack, $cur_node->_left);
+			}
+			
+		}
+		
 	}
 	
 	/*
@@ -172,7 +179,43 @@ class BinaryTreeNode {
 	 * Post-order traversal non-recursive
 	 */
 	public function postOrder() {
-		return NULL;
+		
+		$stack = array();
+		$cur_node = $this;	//assume this is root
+		$has_child = false;
+		$prev_node = NULL;
+		array_push($stack, $cur_node);
+		
+		
+		//the tree has nodes to traverse
+		while (!empty($stack)) {
+			
+			//grab the top node
+			$cur_node = end($stack);
+			
+			if (!$prev_node || $prev_node->_left == $cur_node || $prev_node->_right == $cur_node) {
+				//add the children if node not visited before
+				if ($cur_node->_left) {
+					array_push($stack, $cur_node->_left);
+				} else if ($cur_node->_right) {
+					array_push($stack, $cur_node->_right);
+				}
+				
+			} else if ($cur_node->_left == $prev_node) {
+				//Previously visited the left child
+				if ($cur_node->_right) {
+					array_push($stack, $cur_node->_right);
+				}
+			} else {
+				//no more children
+				$cur_node->visit();
+				array_pop($stack);
+			}
+				
+			$prev_node = $cur_node;
+			
+		}
+		
 	}
 	
 	/*
@@ -215,8 +258,20 @@ $tree->add('C');
 $tree->add('G');
 $tree->add('H');
 
-$tree->_root->inOrder();
+echo "<h3>inOrder </h3>";
+echo "<p>non-Recursive: ".$tree->_root->inOrder()."</p>";
+echo "<p>Recursive: ".$tree->_root->inOrderR()."</p>";
 
+
+echo "<h3>preOrder </h3>";
+echo "<p>non-Recursive: ".$tree->_root->preOrder()."</p>";
+echo "<p>Recursive: ".$tree->_root->preOrderR()."</p>";
+
+echo "<h3>postOrder </h3>";
+echo "<p>non-Recursive: ".$tree->_root->postOrder()."</p>";
+echo "<p>Recursive: ".$tree->_root->postOrderR()."</p>";
+
+echo "<hr />";
 echo "<pre>";
 print_r($tree);
 echo "</pre>";
